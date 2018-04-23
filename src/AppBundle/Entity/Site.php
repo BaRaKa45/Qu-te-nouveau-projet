@@ -12,6 +12,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Site
 {
+    public function __toString()
+    {
+        return $this->icao . " - " . $this->name . " " . $this->city;
+    }
+
+    /**
+    * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="departure")
+    */
+    private $departures;
+
     /**
      * @var int
      *
@@ -186,5 +196,45 @@ class Site
     {
         return $this->city;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->departures = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add departure
+     *
+     * @param \AppBundle\Entity\Flight $departure
+     *
+     * @return Site
+     */
+    public function addDeparture(\AppBundle\Entity\Flight $departure)
+    {
+        $this->departures[] = $departure;
+
+        return $this;
+    }
+
+    /**
+     * Remove departure
+     *
+     * @param \AppBundle\Entity\Flight $departure
+     */
+    public function removeDeparture(\AppBundle\Entity\Flight $departure)
+    {
+        $this->departures->removeElement($departure);
+    }
+
+    /**
+     * Get departures
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getDepartures()
+    {
+        return $this->departures;
+    }
+}
