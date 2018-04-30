@@ -18,7 +18,7 @@ class ReviewController extends Controller
      * Lists all reservation entities.
      *
      * @Route("/", name="review_index")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
      */
     public function indexAction()
     {
