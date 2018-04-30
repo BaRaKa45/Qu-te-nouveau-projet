@@ -86,9 +86,9 @@ class User
     private $reviewAuthors;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight",mappedBy="pilote")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Flight", mappedBy="pilot")
      */
-    private $pilotes;
+    private $pilots;
 
     /**
      * Get id
@@ -274,7 +274,7 @@ class User
     {
         $this->passagers = new \Doctrine\Common\Collections\ArrayCollection();
         $this->reviewAuthors = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->pilotes = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->pilots = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -346,36 +346,36 @@ class User
     }
 
     /**
-     * Add pilote
+     * Add pilot
      *
-     * @param \AppBundle\Entity\Flight $pilote
+     * @param \AppBundle\Entity\Flight $pilot
      *
      * @return User
      */
-    public function addPilote(\AppBundle\Entity\Flight $pilote)
+    public function addPilot(\AppBundle\Entity\Flight $pilot)
     {
-        $this->pilotes[] = $pilote;
+        $this->pilots[] = $pilot;
 
         return $this;
     }
 
     /**
-     * Remove pilote
+     * Remove pilot
      *
-     * @param \AppBundle\Entity\Flight $pilote
+     * @param \AppBundle\Entity\Flight $pilot
      */
-    public function removePilote(\AppBundle\Entity\Flight $pilote)
+    public function removePilot(\AppBundle\Entity\Flight $pilot)
     {
-        $this->pilotes->removeElement($pilote);
+        $this->pilots->removeElement($pilot);
     }
 
     /**
-     * Get pilotes
+     * Get pilots
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getPilotes()
+    public function getPilots()
     {
-        return $this->pilotes;
+        return $this->pilots;
     }
 }

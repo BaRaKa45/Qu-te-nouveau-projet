@@ -36,10 +36,10 @@ class Flight
     private $plane;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User",inversedBy="pilotes")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User",inversedBy="pilots")
      * @ORM\JoinColumn(nullable=false)
      */
-    private $pilote;
+    private $pilot;
 
     /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Reservation", mappedBy="flight")
@@ -331,27 +331,27 @@ class Flight
     }
 
     /**
-     * Set pilote
+     * Set pilot
      *
-     * @param \AppBundle\Entity\User $pilote
+     * @param \AppBundle\Entity\User $pilot
      *
      * @return Flight
      */
-    public function setPilote(\AppBundle\Entity\User $pilote)
+    public function setPilot(\AppBundle\Entity\User $pilot)
     {
-        $this->pilote = $pilote;
+        $this->pilot = $pilot;
 
         return $this;
     }
 
     /**
-     * Get pilote
+     * Get pilot
      *
      * @return \AppBundle\Entity\User
      */
-    public function getPilote()
+    public function getPilot()
     {
-        return $this->pilote;
+        return $this->pilot;
     }
 
     /**
