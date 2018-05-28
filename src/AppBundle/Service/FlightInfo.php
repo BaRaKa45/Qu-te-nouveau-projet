@@ -58,4 +58,9 @@ class FlightInfo
 
         return $d;
     }
+
+    public function getTime($distance, $cruiseSpeed)
+    {
+        return $distance / $cruiseSpeed;
+    }
 }

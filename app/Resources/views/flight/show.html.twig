@@ -41,6 +41,14 @@
                     {% endif %}
                 </td>
             </tr>
+            <tr>
+                <th>Time</th>
+                <td>
+                    {% if time %}
+                        {{ time|number_format(2,',','') }} heures
+                    {% endif %}
+                </td>
+            </tr>
         </tbody>
     </table>
 
