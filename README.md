@@ -1,14 +1,14 @@
 FLYAROUND
 ---------
-Série de quêtes sur Symfony pour la Wild Code School.
+Projet sur Symfony pour la Wild Code School.
 
 
-Flyaround est une platform de co-avionnage.
+Flyaround est une platforme de co-avionnage.
 
-Le but des quêtes est:
+Le but du projet est:
 
 - L'installation de Symfony 3.4
-- L'installation et l'utilisation de Webpack Encore
+- L'installation et l'utilisation de Webpack Encore (bootstrap, js , scss)
 - Créer et gérer les relations entre entités
 - Générer des CRUD
 - Comprendre et utiliser le routing
